@@ -15,21 +15,18 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Question {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotBlank(message = "Question is mandatory")
+    @NotBlank
     private String question;
-    @NotBlank(message = "Subject is mandatory")
+    @NotBlank
     private String subject;
-    @NotBlank(message = "Question type is mandatory")
+    @NotBlank
     private String questionType;
 
-    @NotBlank(message = "Choices are mandatory")
     @ElementCollection
     private List<String> choices;
 
-    @NotBlank(message = "Correct answers are mandatory")
     @ElementCollection
     private List<String> correctAnswers;
 }
